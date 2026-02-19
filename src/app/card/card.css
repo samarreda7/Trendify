@@ -1,0 +1,19 @@
+.fs-tiny {
+  font-size: 0.8rem;
+}
+.img-container{
+    height: 25vh;
+}
+
+.movie-title {
+  font-size: 1rem;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+:host {
+    display: contents; /* makes app-card "invisible" to the layout */
+}

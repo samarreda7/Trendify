@@ -1,0 +1,42 @@
+<section class="py-5">
+    <div class="py-5">
+        <div class="pt-5">
+            <h1 class="text-center fw-bolder fs-1 text-warning"><span class="position-relative ">Trendify</span></h1>
+            <p class="text-muted text-center pt-2 fs-tiny">Best selling products</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row align-items-stretch mx-auto">
+            @for (product of firstEightProducts; track $index) {
+            <app-card>
+                <img id="productImg" [src]="product.image" class="w-100 h-100 rounded-4 object-fit-contain" alt="...">
+                <span id="name">{{ product.title }}</span>
+                <span id="description">{{ product.description }}</span>
+                <span id="category">{{ product.category }}</span>
+                <span id="price">{{ product.price }}</span>
+            </app-card>
+            }
+
+            @defer (on interaction) {
+            @for (product of remainingProducts; track $index) {
+            <app-card>
+                <img id="productImg" [src]="product.image" class="w-100 h-100 rounded-4 object-fit-contain" alt="...">
+                <span id="name">{{ product.title }}</span>
+                <span id="description">{{ product.description }}</span>
+                <span id="category">{{ product.category }}</span>
+                <span id="price">{{ product.price }}</span>
+            </app-card>
+            }
+            } @placeholder {
+            <div class="col-12 text-center mt-4">
+                <button class="btn btn-warning px-5 py-2">Show More</button>
+            </div>
+            } @loading {
+            <div class="col-12 text-center mt-4">
+                <p class="text-muted">Loading more products...</p>
+            </div>
+            }
+        </div>
+
+    </div>
+</section>

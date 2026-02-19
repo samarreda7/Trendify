@@ -1,0 +1,26 @@
+section {
+  background: rgba(128, 128, 128, 0.255);
+}
+h1 span::after {
+  content: '';
+  position: absolute;
+  bottom: -1.199999px;
+  left: 17%;
+  width: 70%;
+  height: 4px;
+  border-radius: 2rem;
+  background: rgb(255, 193, 7);
+}
+.fs-tiny {
+  font-size: 0.8rem;
+}
+
+.movie-title {
+  font-size: 1rem;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
